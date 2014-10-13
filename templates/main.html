@@ -1,13 +1,18 @@
 <!DOCTYPE = html>
 <html>
 <head>
-    <title>mane</title>
-    <link href="{{ STATIC_URL }}style.css" rel="stylesheet" type="text/css" media="screen"/>
+    <title>main</title>
+    <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <div id="header">
-        <p>Simple Calendar</p>
+    <div id="header1">
+        <h1>Simple Calendar</h1>
+    </div>
+    
+    <div id="header2">
+        <p>{{ date_weekday }}, {{ date_day }}. {{ date_month }}</p>
     </div>
 
 </body>

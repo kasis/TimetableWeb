@@ -1,5 +1,26 @@
-#header {
-    background-color: black;
-    height: 20px;
-    width: 20px;
+body {
+    margin: 0;
 }
+#header1 {
+    background-color: #363636;
+    height: 50px;
+    width: 100%;
+}
+
+#header2 {
+    background-color: #CCCCCC;
+    height: 50px;
+    width: 100%;
+}
+
+#header1 h1{
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    margin-left: 3%;
+}
+#header2 p{
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 10%;
+    margin-top:0;
+}
+
