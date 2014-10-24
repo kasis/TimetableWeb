@@ -12,8 +12,12 @@
     </div>
     
     <div id="header2">
-        <p>{{ date_weekday }}, {{ date_day }}. {{ date_month }}</p>
+        {% block header %}
+        <p>{{ date }}</p>
+        {% endblock %}
     </div>
+    {% block content %}
+    {% endblock %}
 
 </body>
 </html>

@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+{% block header %}<h2>Add event</h2>{% endblock %}
+
+{% block content %}
+    <form action="" method="get"> 
+        Name: <input type="text" name="name"><br>
+        Place: <input type="text" name="place"><br>
+        Date: <input type="text" name="date"><br>
+        From: <input type="text" name="start_time">
+        To: <input type="text" name="end_time"><br>
+        Note: <input type="text" name="note"><br>
+        <input type="text" name="reminder_time"><br>
+        <input type="submit" name="search">
+    </form>
+{% endblock %}

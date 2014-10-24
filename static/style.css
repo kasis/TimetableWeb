@@ -2,13 +2,13 @@ body {
     margin: 0;
 }
 #header1 {
-    background-color: #363636;
+    background-color: #393939;
     height: 50px;
     width: 100%;
 }
 
 #header2 {
-    background-color: #CCCCCC;
+    background-color: #ECECEC;
     height: 50px;
     width: 100%;
 }
@@ -20,7 +20,14 @@ body {
 }
 #header2 p{
     font-family: 'Open Sans', sans-serif;
+    padding-top: 1%;
     margin-left: 10%;
     margin-top:0;
 }
-
+#header2 h2{
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 0.5%;
+    margin-left: 3%;
+    margin-top: 0;
+    color: #363636;
+}
