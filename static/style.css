@@ -31,3 +31,8 @@ body {
     margin-top: 0;
     color: #363636;
 }
+
+.table {
+    text-align: center;
+    width: 400px;
+}

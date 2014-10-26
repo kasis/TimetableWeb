@@ -3,14 +3,16 @@
 {% block header %}<h2>Add event</h2>{% endblock %}
 
 {% block content %}
-    <form action="" method="get"> 
-        Name: <input type="text" name="name"><br>
-        Place: <input type="text" name="place"><br>
-        Date: <input type="text" name="date"><br>
-        From: <input type="text" name="start_time">
-        To: <input type="text" name="end_time"><br>
-        Note: <input type="text" name="note"><br>
-        <input type="text" name="reminder_time"><br>
-        <input type="submit" name="search">
+    {% if form.errors %}
+        <p>
+            Please correct the error{{ form.errors|pluralize }}
+        </p>
+    {% endif %}
+
+    <form action="" method="post">{% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" name="add_event">
     </form>
 {% endblock %}
