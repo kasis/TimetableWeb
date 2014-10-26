@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.http import HttpResponse
 from event.models import Events
 from event.forms import AddEventForm
@@ -17,4 +18,4 @@ def add_event(request):
         form = AddEventForm(
             initial={}
         )
-    return render_to_response('add_event.html', {'form': form})
+    return render_to_response('add_event.html', {'form': form}, context_instance = RequestContext(request))
