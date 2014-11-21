@@ -11,9 +11,16 @@ def add_event(request):
     if request.method == 'POST':
         form = AddEventForm(request.POST)
         if form.is_valid():
-            e = Events(evt_name='name', evt_place='place', evt_start_time='time_start', evt_end_time='time_end', evt_date='date', evt_note='note')
+            cd = form.cleaned_data
+            e = Events(
+                evt_name=cd['name'], 
+                evt_place=cd['place'], 
+                evt_start_time=cd['time_start'], 
+                evt_end_time=cd['time_end'], 
+                evt_date=cd['date'], 
+                evt_note=cd['note']
+            )
             e.save()
-            return HttpResponseRedirect('/add_event/thanks/')
     else: 
         form = AddEventForm(
             initial={}
