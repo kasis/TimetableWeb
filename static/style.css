@@ -32,7 +32,30 @@ body {
     color: #363636;
 }
 
-.table {
-    text-align: center;
-    width: 400px;
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+}
+
+.errorlist li {
+    background-color: red;
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 0 0 0;
+    padding: 4px 5px;
+}
+
+.inp_style input{
+    width: 402px;
+    height: 23px;
+}
+.inp_style textarea{
+    width: 402px;
+    height: 23px;
+}
+
+.inp_style label{
+    font-family: 'Open Sans', sans-serif;
+    size: 14px;
 }

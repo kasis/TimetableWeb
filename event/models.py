@@ -12,8 +12,8 @@ class Periods(models.Model):
 class Events(models.Model):
     evt_name = models.CharField(max_length=45)
     evt_place = models.CharField(max_length=45)
-    evt_start_time = models.TimeField()
-    evt_end_time = models.TimeField()
+    evt_start_time = models.DateTimeField()
+    evt_end_time = models.DateTimeField()
     evt_date = models.DateField()
     evt_note = models.TextField()
     per = models.ForeignKey(Periods)

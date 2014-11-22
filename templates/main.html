@@ -1,24 +1,11 @@
-<!DOCTYPE = html>
-<html>
-<head>
-    <title>main</title>
-    <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-</head>
+{% extends "base.html" %}
 
-<body>
-    <div id="header1">
-        <h1>Simple Calendar</h1>
-    </div>
-    
-    <div id="header2">
-        {% block header %}
-        <p>{{ date }}</p>
-        {% endblock %}
-    </div>
-    {% block content %}
-    {% endblock %}
+{% block title %}<title> main </title>{% endblock %}
 
-</body>
-</html>
+{% block header %}
+    <p>{{ date }}</p>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
 
