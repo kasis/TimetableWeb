@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from event.models import Events
 from event.forms import AddEventForm
 import datetime
@@ -21,6 +21,7 @@ def add_event(request):
                 evt_note=cd['note']
             )
             e.save()
+            return HttpResponseRedirect ('')
     else: 
         form = AddEventForm(
             initial={}

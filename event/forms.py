@@ -5,5 +5,5 @@ class AddEventForm(forms.Form):
     place = forms.CharField(max_length=100)
     date = forms.DateField()
     note = forms.CharField(widget=forms.Textarea)
-    time_start = forms.DateTimeField()
-    time_end = forms.DateTimeField()
+    time_start = forms.TimeField()
+    time_end = forms.TimeField()
