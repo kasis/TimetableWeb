@@ -1,30 +1,57 @@
 body {
     margin: 0;
 }
-#header1 {
-    background-color: #393939;
+.header1 {
+	position:relative ;	
+	background-color: #393939;
     height: 50px;
     width: 100%;
+	outline: 0;
+	border: none;
+	margin-top:0;
+
 }
 
-#header2 {
+.header2 {
+	position:relative;
     background-color: #ECECEC;
     height: 50px;
     width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	padding:0;
+	margin:0;
+
+}
+.header2>h1{
+	color:#393939;
+	padding:0;
+	margin:0;
+	margin-left:3%;
+	
+}
+.add_event_button{
+	position:relative;
+	height: 50px;
+	border: 1px solid black;
+	width: 100px;
 }
 
-#header1 h1{
+a{
+	text-decoration:none;
+}
+
+.header1 h1{
     font-family: 'Open Sans', sans-serif;
     color: #FFFFFF;
     margin-left: 3%;
 }
-#header2 p{
+.header2 p{
     font-family: 'Open Sans', sans-serif;
     padding-top: 1%;
     margin-left: 10%;
     margin-top:0;
 }
-#header2 h2{
+.header2 h2{
     font-family: 'Open Sans', sans-serif;
     padding-top: 0.5%;
     margin-left: 3%;
@@ -49,10 +76,12 @@ ul.errorlist {
 .inp_style input{
     width: 402px;
     height: 23px;
+	border:2px solid black;
 }
 .inp_style textarea{
     width: 402px;
     height: 23px;
+	border:2px solid black;
 }
 
 .inp_style label{
@@ -62,4 +91,23 @@ ul.errorlist {
 
 p {
     font-family: 'Open Sans', sans-serif;
+}
+
+.menu {
+	position: absolute;
+	margin 0;
+}
+.menu ul{
+	margin:0 ;
+	padding: 0; 
+	list-style: none;
+}
+
+.menu li{
+	display: inline-block;
+	border:1px solid black;
+}
+
+.menu .addev-button{
+	right:0;
 }

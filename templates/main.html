@@ -3,7 +3,16 @@
 {% block title %}<title> main </title>{% endblock %}
 
 {% block header %}
-    <p>{{ date }}</p>
+    <nav class="menu">
+		<ul>
+			<li><p>{{ date }}</p></li>
+		</ul>
+	</nav>
+	<nav class="menu addev-button">
+		<ul>
+			<li><a href="/add_event/">add event</a></li>
+		</ul>
+	</nav>
 {% endblock %}
 
 {% block content %}{% endblock %}

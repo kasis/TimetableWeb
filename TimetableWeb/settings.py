@@ -62,7 +62,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'TWdb',
         'USER': 'root',
-        'PASSWORD': 'i4cueverywhere',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
     }
 }

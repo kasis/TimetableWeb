@@ -21,7 +21,7 @@ def add_event(request):
                 evt_note=cd['note']
             )
             e.save()
-            return HttpResponseRedirect ('')
+            return HttpResponseRedirect('/')
     else: 
         form = AddEventForm(
             initial={}

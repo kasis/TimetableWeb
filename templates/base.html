@@ -4,18 +4,31 @@
     {% block title %}{% endblock %}
     <link href="/static/style.css" rel="stylesheet" type="text/css"media="screen"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	{% block links %}
+	{% endblock %}
 </head>
 
 <body>
-    <div id="header1">
-        <h1>Simple Calendar</h1>
-    </div>
+    <header class="header1">
+        <a href="/"><h1>Simple Calendar</h1></a>
+    </header>
 
-    <div id="header2">
-        {% block header %}{% endblock %}
-    </div>
-    {% block content %}{% endblock %}
+    <header class="header2">
+		<div class="header2_content">
+        	{% block header %}
+			{% endblock %}
+		</div>
+    </header>
+    {% block content %}
+		<main>
+		</main>
 
+	{% endblock %}
+	
+	{% block footer %}
+		<footer>
+		</footer>
+	{% endblock %}
 </body>
 </html>
 

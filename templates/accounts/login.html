@@ -1,0 +1,22 @@
+<!DOCTYPE = html>
+<html>
+	<head>
+		<title>login</title>
+		<link href="/static/style_log.css" rel="stylesheet" type="text/css" media="screen"/>
+	</head>
+	<body>
+	<div class="log-inp">
+		<form action="" method="post">{% csrf_token %}
+			<div class="inp-tab">
+				<ul>
+					<li><input type="text" name="username"></li>
+					<li><input type="password" name="password"></li>
+					<li><input type="submit"></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+	<div class="logo-back">
+	</div>
+	</body>
+</html>
