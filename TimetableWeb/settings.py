@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,7 +62,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'TWdb',
         'USER': 'root',
-        'PASSWORD': 'i4cueverywhere',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
     }
 }
@@ -93,3 +93,8 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

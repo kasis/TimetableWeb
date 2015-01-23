@@ -1,0 +1,39 @@
+h1{
+	padding:0;
+	margin:0;
+	margin-left:3%;
+	color:#393939;
+}
+
+input:not([type="submit"]){
+	width: 402px;
+	height: 23px;
+	border: 2px solid black;
+}
+.info_tab{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	
+}
+.label_tab{
+	float: left;
+	width:150px;
+	min-height:200px;
+}
+.reg_tab{
+	width:406px;
+	min-height:200px;
+	float:right;
+}
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+li{
+	margin-left:0;
+	margin-top: 15px;
+}

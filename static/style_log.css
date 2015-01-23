@@ -1,0 +1,50 @@
+body{
+	padding:0;
+	margin:0;
+	background-image:
+		linear-gradient(
+			#393939 0%,
+			#393939 50%,
+			#ECECEC 50%,
+			#ECECEC 100%
+		)
+}
+.log-inp {
+	position:absolute;
+	height:100%;
+	width:30%;
+	min-width:300px;
+	border:none;
+	margin:0;
+	background-color:white;
+	-webkit-box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
+	box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
+}
+
+.inp-tab {
+	width:300px;
+	margin:auto;
+	margin-top:70%;
+}
+
+li{
+	margin-top:15px;
+}
+ul{
+	list-style:none;
+}
+
+input[type = "text"],
+input[type = "password"]{
+	width:200px;
+	height:30px;
+}
+
+input[type = "submit"]{
+	display:inline-block;
+	margin-left:23%;
+	padding:4px 15px;
+	width: auto;
+}
+

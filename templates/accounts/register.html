@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}<title>registration</title>{% endblock %}
+{% block links %}
+	<link href="/static/style_reg.css" rel="stylesheet" type="text/css" media="screen"/>
+{% endblock %}
+{% block header %}
+	<h1>registration</h1>
+{% endblock %}
+{% block content %}
+	<div class="info_tab">
+		<div class="label_tab">
+			<label for="username"><p>Username:</p></label>
+			<label for="email"><p>e-mail:</p></label>
+			<label for="username"><p>password:</p></label>
+		</div>
+		<div class="reg_tab">
+			<form action="" method="post">{% csrf_token %}
+				<ul>
+					<li><input type="text" name="username" id="username"></li>
+					<li><input type="email" name="email" id="email"></li>
+					<li><input type="password" name="password" id="password"></li>
+					<li><input type="submit"></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+{% endblock %}

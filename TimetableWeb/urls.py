@@ -8,7 +8,11 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url('^$', views.main),
+	url(r'^accounts/register/$', views.registration),
+	url(r'^accounts/login/$', 'django.contrib.auth.views.login', { "template_name": "accounts/login.html" }),
+	url(r'^$', views.main),
+	url(r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login' ),
+	url(r'^accounts/profile/$', views.later),
 )
 urlpatterns += patterns('event.views',
     (r'^add_event/$', 'add_event'),
