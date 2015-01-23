@@ -1,12 +1,14 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
-from event.models import Events
+from django.contrib.auth.decorators import login_required
+from event.models import Event
 from event.forms import AddEventForm
 import datetime
 import time
 # Create your views here.
 
+@login_required
 def add_event(request): 
     if request.method == 'POST':
         form = AddEventForm(request.POST)

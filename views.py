@@ -14,7 +14,11 @@ def hello(request):
 
 def main(request):
     now = datetime.datetime.now().strftime("%a, %d. %b")
-    return render_to_response('main.html', {'date': now })
+    return render_to_response('main.html', {
+			'date': now
+			},
+			context_instance = RequestContext(request)
+			)
 
 def later(request):
 	return HttpResponse("nope")

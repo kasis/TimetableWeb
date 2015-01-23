@@ -14,22 +14,24 @@ body{
 	height:100%;
 	width:30%;
 	min-width:300px;
-	border:none;
+	border:1px solid yellow;
 	margin:0;
 	background-color:white;
-	-webkit-box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
-	box-shadow: inset -30px 0px 30px -19px rgba(0,0,0,0.75);
-}
-
-.inp-tab {
-	width:300px;
-	margin:auto;
-	margin-top:70%;
+	-webkit-box-shadow:  -30px 0px 30px -19px rgba(0,0,0,0.75);
+	-moz-box-shadow:  -30px 0px 30px -19px rgba(0,0,0,0.75);
+	box-shadow:  -30px 0px 30px -19px rgba(0,0,0,0.75);
 }
 
 li{
 	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid blue;
+	width:200px;
+}
+
+li:last-child{
+	width:70px;
 }
 ul{
 	list-style:none;
@@ -42,9 +44,14 @@ input[type = "password"]{
 }
 
 input[type = "submit"]{
-	display:inline-block;
-	margin-left:23%;
-	padding:4px 15px;
-	width: auto;
+	width:70px;;
+}
+
+.reg-link {
+	position: absolute;
+	width: 50px;
+	margin:auto;
+	bottom: 3px;
+	border:1px dashed green;
 }
 
