@@ -1,0 +1,4 @@
+*.swp
+*.tmp
+*.bak
+TimetableWeb/local_settings.py
