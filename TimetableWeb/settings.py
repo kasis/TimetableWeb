@@ -7,6 +7,8 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+#Imort local settings
+import localsettings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -60,10 +62,10 @@ WSGI_APPLICATION = 'TimetableWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TWdb',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': localsettings.DB_NAME,
+        'USER': localsettings.DB_USER,
+        'PASSWORD': localsettings.DB_PASS,
+        'HOST': localsettings.DB_HOST,
     }
 }
 
