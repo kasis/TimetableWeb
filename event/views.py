@@ -14,7 +14,7 @@ def add_event(request):
         form = AddEventForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            e = Events(
+            e = Event(
                 evt_name=cd['name'], 
                 evt_place=cd['place'], 
                 evt_start_time=cd['time_start'], 

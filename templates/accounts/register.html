@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}<title>registration</title>{% endblock %}
+{% block title %}<title>Registration</title>{% endblock %}
 {% block links %}
 	<link href="/static/style_reg.css" rel="stylesheet" type="text/css" media="screen"/>
 {% endblock %}
 {% block header %}
-	<h1>registration</h1>
+	<h1>Registration</h1>
 {% endblock %}
 {% block content %}
 	<div class="info_tab">
 		<div class="label_tab">
 			<label for="username"><p>Username:</p></label>
-			<label for="email"><p>e-mail:</p></label>
-			<label for="username"><p>password:</p></label>
+			<label for="email"><p>Email:</p></label>
+			<label for="username"><p>Password:</p></label>
 		</div>
 		<div class="reg_tab">
 			<form action="" method="post">{% csrf_token %}
