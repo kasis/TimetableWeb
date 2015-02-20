@@ -3,20 +3,24 @@
 	<head>
 		<title>login</title>
 		<link href="/static/style_log.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 	<div class="log-inp">
 		<form action="" method="post">{% csrf_token %}
 			<div class="inp-tab">
 				<ul>
-					<li><input type="text" name="username"></li>
+                    {% if form.errors %}
+                        <li><p class="error">wrong login or password</p></li>
+                    {% endif %}
+                    <li><input type="text" name="username"></li>
 					<li><input type="password" name="password"></li>
 					<li><input type="submit"></li>
 				</ul>
 			</div>
 		</form>
 		<div class="reg-link">
-			<a href="accounts/register/">sign up</a>
+			<a href="/accounts/register/">sign up</a>
 		</div>
 	</div>
 	<div class="logo-back">

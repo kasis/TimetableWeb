@@ -11,10 +11,16 @@
         </p>
     {% endif %}
 	<div class="addev-form">
-    	<form action="" method="post">{% csrf_token %} 
-       		<table class="inp_style">
-            	{{ form.as_table }}
-        	</table>
+    	<form action="" method="post">{% csrf_token %}
+            <ul>    
+                    <li><input type="text" name="name" id="name"></li>
+                    <li><input type="text" name="place" id="place"></li>
+                    <li><input type="date" name="date" id="date"></li>
+                    <li><input type="time" name="start_time" id="from"></li>
+                    <li><input type="time" name="end_time" id="to"></li>
+                    <li><textarea name="note" id="note"></textarea></li>
+                
+        	</ul>
         	<input type="submit" name="add_event" value="save" class="save-buttom">
     	</form>
 	</div>
