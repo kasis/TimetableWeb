@@ -24,7 +24,6 @@ def main(request):
 def add_event(request): 
     errors = []
     if request.method == 'POST':
-<<<<<<< HEAD
         if not request.POST.get('name', ''):
             errors.append('Enter an eventname.')
         if not request.POST.get('place', ''):
@@ -43,8 +42,7 @@ def add_event(request):
                 evt_end_time=request.POST['end_time'], 
                 evt_date=request.POST['date'], 
                 evt_note=request.POST['note'],
-                owner=request.user
-=======
+                owner=request.user)
         form = AddEventForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
@@ -55,7 +53,6 @@ def add_event(request):
                 evt_end_time=cd['time_end'], 
                 evt_date=cd['date'], 
                 evt_note=cd['note']
->>>>>>> 3a56400ec0dd5a71a1fbefb561bd2945ac7c7e79
             )
             e.save()
             return HttpResponseRedirect('/')
