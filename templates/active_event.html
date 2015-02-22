@@ -7,5 +7,12 @@
 {% endblock %}
 
 {% block content %}
-<p>{{ event.evt_name }}</p>
+    <div>
+        <form action="" method="post">{% csrf_token %}
+            <ul>
+                <li><textarea name="note" id="note">{{ event.evt_note }}</textarea></li>
+                <li><input type="submit">
+            </ul>
+        </form>
+    </div>
 {% endblock %}

@@ -9,6 +9,7 @@ import datetime
 import time
 # Create your views here.
 
+@login_required
 def main(request):
     user_events = Event.objects.filter(owner = request.user)
     now = datetime.datetime.now().strftime("%a, %d. %b")
@@ -16,26 +17,13 @@ def main(request):
             'date': now,
             'user_events': user_events
             },
-            context_instance =
-            RequestContext(request)
+            context_instance = RequestContext(request)
         ) 
                
 @login_required
 def add_event(request): 
-    errors = []
     if request.method == 'POST':
-        if not request.POST.get('name', ''):
-            errors.append('Enter an eventname.')
-        if not request.POST.get('place', ''):
-            errors.append('Enter an eventplace.')
-        if not request.POST.get('start_time', ''):
-            errors.append('Enter a start time.')
-        if not request.POST.get('end_time', ''):
-            errors.append('Enter an end time.')
-        if not request.POST.get('date', ''):
-            errors.append('Enter a date.')
-        if not errors:
-            e = Event(
+        e = Event(
                 evt_name=request.POST['name'], 
                 evt_place=request.POST['place'], 
                 evt_start_time=request.POST['start_time'], 
@@ -43,22 +31,19 @@ def add_event(request):
                 evt_date=request.POST['date'], 
                 evt_note=request.POST['note'],
                 owner=request.user)
-        form = AddEventForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            e = Event(
-                evt_name=cd['name'], 
-                evt_place=cd['place'], 
-                evt_start_time=cd['time_start'], 
-                evt_end_time=cd['time_end'], 
-                evt_date=cd['date'], 
-                evt_note=cd['note']
-            )
-            e.save()
-            return HttpResponseRedirect('/')
-    return render_to_response('add_event.html', {'errors': errors}, context_instance = RequestContext(request))
+        e.save()
+        return HttpResponseRedirect('/')
+    return render_to_response('add_event.html', context_instance = RequestContext(request))
 
 @login_required
 def active_event(request, cur_id):
-    event = Event.objects.filter(id = cur_id)
-    return render_to_response('active_event.html', {'event': event})
+    event = Event.objects.get(id = cur_id)
+    if request.method == 'POST':    
+        event.evt_note = request.POST['note']
+        event.save()
+        return HttpResponseRedirect('/')
+    return render_to_response('active_event.html', {
+            'event': event,
+        },
+        context_instance = RequestContext(request)
+        )

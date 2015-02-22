@@ -1,0 +1,39 @@
+input:not([type="submit"]) {
+    width:402px;
+    height:23px;
+    border:2px solid black;
+}
+
+input[type="time"] {
+    width:180px;
+}
+
+input[type="date"] {
+    width:401px;
+}
+
+textarea {
+    width:398px;
+    border:2px solid black;
+}
+
+
+td {
+    padding:0;
+    margin:0;
+}
+
+tr>td:first-child {
+    min-width:150px;
+}
+
+tr>td:nth-child(4)>input {
+    float:right;
+}
+
+.addev-form {
+    width:557.778px;
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+}

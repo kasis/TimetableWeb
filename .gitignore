@@ -3,3 +3,4 @@
 *.bak
 *.pyc
 TimetableWeb/local_settings.py
+TimetableWeb/localsettings.py
