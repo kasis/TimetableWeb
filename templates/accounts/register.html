@@ -17,9 +17,9 @@
 		<div class="reg_tab">
 			<form action="" method="post">{% csrf_token %}
 				<ul>
-					<li><input type="text" name="username" id="username"></li>
-					<li><input type="email" name="email" id="email"></li>
-					<li><input type="password" name="password" id="password"></li>
+					<li><input type="text" name="username" id="username" required></li>
+					<li><input type="email" name="email" id="email" required></li>
+					<li><input type="password" name="password" id="password" required></li>
 					<li><input type="submit"></li>
 				</ul>
 			</form>

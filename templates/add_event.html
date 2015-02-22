@@ -1,21 +1,43 @@
 {% extends "base.html" %}
 {% block title %}<title>add event</title>{% endblock %}
+{% block links %}
+    <link href="/static/style_addev.css" rel="stylesheet" type="text/css">
+{% endblock %}
 {% block header %}
     <h2>Add event</h2>
 {% endblock %}
 
 {% block content %}
-    {% if form.errors %}
-        <p style="color: red;">
-            Please correct the error{{ form.errors|pluralize }}
-        </p>
-    {% endif %}
 	<div class="addev-form">
-    	<form action="" method="post">{% csrf_token %} 
-       		<table class="inp_style">
-            	{{ form.as_table }}
-        	</table>
-        	<input type="submit" name="add_event" value="save" class="save-buttom">
+    	<form action="" method="post">{% csrf_token %}
+            <table>    
+                    <tr>
+                        <td colspan="1"><label for="name"><p>Name:</p></label></td>
+                        <td colspan="3"><input type="text" name="name" id="name" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="place"><p>Place:</p></label></td>
+                        <td colspan="3"><input type="text" name="place" id="place"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="date"><p>Date:</p></label></td>
+                        <td colspan="3"><input type="date" name="date" id="date" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="from"><p>From:</p></label></td>
+                        <td colspan="1"><input type="time" name="start_time" id="from" required></td>
+                        <td colspan="1"><label for="to"><p>To:</p></label></td>
+                        <td colspan="1"><input type="time" name="end_time" id="to" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="note"><p>Note:</p></label></td>
+                        <td colspan="3"><textarea name="note" id="note"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"></td>
+                        <td colspan="3"><input type="submit" name="add_event" value="save" class="save-buttom"></td>
+                    </tr> 
+            </table>
     	</form>
 	</div>
 {% endblock %}

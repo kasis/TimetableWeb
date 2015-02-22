@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}<title>{{ event.evt_name }}</title>{% endblock %}
+
+{% block header %} 
+    <h2>{{ event.evt_name }}</h2>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="" method="post">{% csrf_token %}
+            <ul>
+                <li><textarea name="note" id="note">{{ event.evt_note }}</textarea></li>
+                <li><input type="submit">
+            </ul>
+        </form>
+    </div>
+{% endblock %}
