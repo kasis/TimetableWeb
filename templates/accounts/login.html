@@ -6,6 +6,13 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+    {% load staticfiles %}
+    <style>
+        body {
+            background: url("{% static "media/log_background.jpg" %}");
+            background-size:cover;
+        }
+    </style>
 	<div class="log-inp">
 		<form action="" method="post">{% csrf_token %}
 			<div class="inp-tab">
@@ -23,7 +30,8 @@
 			<a href="/accounts/register/">sign up</a>
 		</div>
 	</div>
-	<div class="logo-back">
+    <div class="logo_background">
+        <img src="{% static "media/logo1.png" %}" class="logo-img">
 	</div>
 	</body>
 </html>
