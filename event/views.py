@@ -38,12 +38,15 @@ def add_event(request):
 @login_required
 def active_event(request, cur_id):
     event = Event.objects.get(id = cur_id)
-    if request.method == 'POST':    
-        event.evt_note = request.POST['note']
-        event.save()
-        return HttpResponseRedirect('/')
-    return render_to_response('active_event.html', {
+    if request.user == event.owner:    
+        if request.method == 'POST':    
+            event.evt_note = request.POST['note']
+            event.save()
+            return HttpResponseRedirect('/')
+        return render_to_response('active_event.html', {
             'event': event,
-        },
-        context_instance = RequestContext(request)
-        )
+            },
+            context_instance = RequestContext(request)
+            )
+    else:
+        return render_to_response('404.html')
