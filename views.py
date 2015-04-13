@@ -13,7 +13,7 @@ def hello(request):
     return render_to_response('hello.html', {'hello': hello})
 
 def main(request):
-    now = datetime.datetime.now().strftime("%a, %d. %b")
+    now = datetime.datetime.now().strftime("%a, %d. %b %Y")
     return render_to_response('main.html', {
 			'date': now
 			},
