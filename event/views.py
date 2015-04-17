@@ -47,3 +47,5 @@ def active_event(request, cur_id):
         },
         context_instance = RequestContext(request)
         )
+
+

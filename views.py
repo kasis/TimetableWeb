@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 import datetime
 import time
-
+import django.forms
 def hello(request):
     hello = 'hello world'
     return render_to_response('hello.html', {'hello': hello})
@@ -25,12 +25,18 @@ def later(request):
 
 def registration(request):
 	if request.method == 'POST':
-	    user = User.objects.create_user(
+		if User.objects.filter(email=request.POST['email']).exists():
+			#TODO: pass error to template
+			raise django.forms.ValidationError("This email is already used")
+		if User.objects.filter(username=request.POST['username']).exists():
+			#TODO: pass error to template
+			raise django.forms.ValidationError("This user name is already used")
+		user = User.objects.create_user(
 					request.POST['username'],
 					request.POST['email'],
 					request.POST['password']
 				)
-	    return HttpResponseRedirect('/accounts/login/')
+		return HttpResponseRedirect('/accounts/login/')
 	return render_to_response("accounts/register.html", {
 				'username': request.POST.get('username', ''),
 				'email': request.POST.get('email', ''),
