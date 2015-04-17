@@ -15,8 +15,15 @@
                 <a href="/event/{{ event.id }}/">
                     <li>
                         <div class="active-event">
-                            <p class="act-ev-name">{{ event.evt_name }}</p>
-                            <p class="act-ev-name">{{ event.evt_start_time }}</p>
+                            <div class="event-main-inform">
+                                <p class="act-ev-name">{{ event.evt_name }}</p>
+                                <p class="act-ev-date">{{ event.evt_date }}</p>
+                                <p class="act-ev-time">{{ event.evt_start_time }} - {{ event.evt_end_time }}</p>
+                            </div>
+                            <div class="event-description">
+                                <p>{{ event.evt_note }}</p>
+                            </div>
+                            <div class="act-evt-help-div"></div>
                         </div>
                     </li>
                 </a>
