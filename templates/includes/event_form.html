@@ -1,19 +1,10 @@
-{% extends "base.html" %}
-{% block title %}<title>add event</title>{% endblock %}
-{% block links %}
-{% endblock %}
-    <link href="/static/style_addev.css" rel="stylesheet" type="text/css">
-{% block header %}
-    <h2>Add event</h2>
-{% endblock %}
-
-{% block content %}
-	<div class="addev-form">
+	
+    <div class="addev-form">
     	<form action="" method="post">{% csrf_token %}
             <table>    
                     <tr>
                         <td colspan="1"><label for="name"><p>Name:</p></label></td>
-                        <td colspan="3"><input type="text" name="name" id="name" required></td>
+                        <td colspan="3"><input type="text" name="name" id="name" value="{{ name }}" required></td>
                     </tr>
                     <tr>
                         <td colspan="1"><label for="place"><p>Place:</p></label></td>
@@ -40,4 +31,3 @@
             </table>
     	</form>
 	</div>
-{% endblock %}

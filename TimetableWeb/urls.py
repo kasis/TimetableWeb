@@ -15,9 +15,10 @@ urlpatterns = patterns('',
     #url(r'^$', views.main),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login' ),
     url(r'^accounts/profile/$', views.later),
+    url(r'^$', views.main),
 )
 urlpatterns += patterns('event.views',
     url(r'^add_event/$', 'add_event'),
-    url(r'^$', 'main'),
+    url(r'^day/(?P<day_iter>\d+)/$', 'day_events'),
     url(r'^event/(?P<cur_id>\d+)/$', 'active_event'),
 )

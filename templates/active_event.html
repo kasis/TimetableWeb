@@ -1,18 +1,44 @@
 {% extends "base.html" %}
 
 {% block title %}<title>{{ event.evt_name }}</title>{% endblock %}
-
+{% block links %} 
+    <link href="/static/style_addev.css" rel="stylesheet" type="text/css">
+{% endblock %}
 {% block header %} 
     <h2>{{ event.evt_name }}</h2>
 {% endblock %}
 
 {% block content %}
-    <div>
-        <form action="" method="post">{% csrf_token %}
-            <ul>
-                <li><textarea name="note" id="note">{{ event.evt_note }}</textarea></li>
-                <li><input type="submit">
-            </ul>
-        </form>
-    </div>
+	<div class="addev-form">
+    	<form action="" method="post">{% csrf_token %}
+            <table>    
+                    <tr>
+                        <td colspan="1"><label for="name"><p>Name:</p></label></td>
+                        <td colspan="3"><input type="text" name="name" id="name" value="{{ event.evt_name }}" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="place"><p>Place:</p></label></td>
+                        <td colspan="3"><input type="text" name="place" id="place" value="{{ event.evt_place }}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="date"><p>Date:</p></label></td>
+                        <td colspan="3"><input type="date" name="date" id="date" value="{{ event.evt_date }}" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="from"><p>From:</p></label></td>
+                        <td colspan="1"><input type="time" name="start_time" id="from" value="{{ event.evt_start_time }}" required></td>
+                        <td colspan="1"><label for="to"><p>To:</p></label></td>
+                        <td colspan="1"><input type="time" name="end_time" id="to" value="{{ event.evt_end_time }}" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><label for="note"><p>Note:</p></label></td>
+                        <td colspan="3"><textarea name="note" id="note">{{ event.evt_note }}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"></td>
+                        <td colspan="3"><input type="submit" name="add_event" value="save" class="save-buttom"></td>
+                    </tr> 
+            </table>
+    	</form>
+	</div>
 {% endblock %}

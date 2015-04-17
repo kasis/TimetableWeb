@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from event.models import Event
@@ -8,18 +8,27 @@ from event.forms import AddEventForm
 import datetime
 import time
 # Create your views here.
-
+               
 @login_required
-def main(request):
-    user_events = Event.objects.filter(owner = request.user)
-    now = datetime.datetime.now().strftime("%a, %d. %b")
-    return render_to_response('main.html', {
+def day_events(request, day_iter):
+    try:
+        day_iter = int(day_iter)
+    except:
+        raise Http404() 
+    day_inc = day_iter + 1
+    day_dec = day_iter - 1
+    now = datetime.datetime.now() + datetime.timedelta(days=day_iter)
+    user_events = Event.objects.filter(owner = request.user, evt_name = 'tast')
+    now = now.strftime("%a, %d. %b %Y")
+    return render_to_response('day_events.html', {
+            'user_events': user_events,
             'date': now,
-            'user_events': user_events
+            'day_dec': day_dec,
+            'day_inc': day_inc,
             },
             context_instance = RequestContext(request)
-        ) 
-               
+        )
+
 @login_required
 def add_event(request): 
     if request.method == 'POST':
@@ -38,14 +47,15 @@ def add_event(request):
 @login_required
 def active_event(request, cur_id):
     event = Event.objects.get(id = cur_id)
-    if request.method == 'POST':    
-        event.evt_note = request.POST['note']
-        event.save()
-        return HttpResponseRedirect('/')
-    return render_to_response('active_event.html', {
+    if request.user == event.owner:    
+        if request.method == 'POST':    
+            event.evt_note = request.POST['note']
+            event.save()
+            return HttpResponseRedirect('/')
+        return render_to_response('active_event.html', {
             'event': event,
-        },
-        context_instance = RequestContext(request)
-        )
-
-
+            },
+            context_instance = RequestContext(request)
+            )
+    else:
+        raise Http404()

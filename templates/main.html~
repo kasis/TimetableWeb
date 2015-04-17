@@ -16,18 +16,13 @@
 			</ul>
 		{% endif %}
 	</div> 
-{% endblock %}
-{% block header-center %}
-<div class="event-output-container">
-    <ul>
-        <li><a href="/day/0/">Day</a></li>
-        <li><a href="#">Week</a></li>
-        <li><a href="#">Month</a></li>
-    </ul>
-</div>
-     
-{% endblock %}
+{% endblock %} 
 {% block header %}
+    <div class="h-date">
+        <a href="/day/"><div id="left-arrow"></div></a>
+        <p>{{ date }}</p>
+        <div id="right-arrow"></div>
+    </div>
 	<div class="addev-button">
 		<a href="/add_event/">add event</a></li>
 	</div>

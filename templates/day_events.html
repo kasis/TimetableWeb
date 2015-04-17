@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block header-2 %}
+    <div class="h-date">
+        <a href="/day/{{ day_dec }}/"><div id="left-arrow"></div></a>
+        <p>{{ date }}</p>
+        <a href="/day/{{ day_inc }}/"><div id="right-arrow"></div></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="act-ev-block">
+        <ul>
+            {% for event in user_events %}
+                <a href="/event/{{ event.id }}/">
+                    <li>
+                        <div class="active-event">
+                            <p class="act-ev-name">{{ event.evt_name }}</p>
+                            <p class="act-ev-name">{{ event.evt_start_time }}</p>
+                        </div>
+                    </li>
+                </a>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+<p>{{ test }}</p>

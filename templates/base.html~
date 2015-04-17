@@ -31,11 +31,7 @@
     	<div class="header2">
 			<div class="header2_content">
         		{% block header %}
-			{% endblock %}
-			{% block header-2 %}
-			{% endblock %}
-            {% block header-center %}
-            {% endblock %}
+				{% endblock %}
 			</div>
 		</div>
     </header>
