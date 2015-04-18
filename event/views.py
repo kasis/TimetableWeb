@@ -18,7 +18,8 @@ def day_events(request, day_iter):
     day_inc = day_iter + 1
     day_dec = day_iter - 1
     now = datetime.datetime.now() + datetime.timedelta(days=day_iter)
-    user_events = Event.objects.filter(owner = request.user, evt_name = 'tast')
+    user_events = Event.objects.filter(owner = request.user)
+    user_events = user_events.filter(evt_date = now )
     now = now.strftime("%a, %d. %b %Y")
     return render_to_response('day_events.html', {
             'user_events': user_events,
