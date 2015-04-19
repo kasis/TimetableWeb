@@ -14,8 +14,10 @@ def hello(request):
 
 def main(request):
     now = datetime.datetime.now().strftime("%a, %d. %b %Y")
+    now_link = datetime.datetime.now().strftime('%Y/%m/%d')
     return render_to_response('main.html', {
-			'date': now
+			'date': now,
+                        'now_link': now_link
 			},
 			context_instance = RequestContext(request)
 			)

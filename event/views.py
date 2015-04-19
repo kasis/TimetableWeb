@@ -10,22 +10,30 @@ import time
 # Create your views here.
                
 @login_required
-def day_events(request, day_iter):
+def day_events(request, year, month, day):
     try:
-        day_iter = int(day_iter)
+        year = int(year)
+        month = int(month)
+        day = int(day)
     except:
         raise Http404() 
-    day_inc = day_iter + 1
-    day_dec = day_iter - 1
-    now = datetime.datetime.now() + datetime.timedelta(days=day_iter)
+    now = datetime.date(year, month, day)
+    timedelta1 = datetime.timedelta(days=1)
+    day_inc = now + timedelta1
+    day_inc = day_inc.strftime('%Y/%m/%d')
+    timedelta2 = datetime.timedelta(days=-1)
+    day_dec = now + timedelta2
+    day_dec = day_dec.strftime('%Y/%m/%d')
     user_events = Event.objects.filter(owner = request.user)
     user_events = user_events.filter(evt_date = now )
     now = now.strftime("%a, %d. %b %Y")
+    now_link = datetime.datetime.now().strftime('%Y/%m/%d')
     return render_to_response('day_events.html', {
             'user_events': user_events,
             'date': now,
             'day_dec': day_dec,
             'day_inc': day_inc,
+            'now_link': now_link
             },
             context_instance = RequestContext(request)
         )
